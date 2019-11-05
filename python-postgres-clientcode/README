@@ -1,0 +1,5 @@
+#update the first data item of each line to be a more recent timestamp
+#https://www.epochconverter.com
+#because the client gets the largest timestamp and only adds data after that
+python3 useDB.py 169.xxx.xxx.xxx DB_DATABASE DBUSER DBPASSWORD
+
