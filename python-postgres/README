@@ -1,0 +1,33 @@
+Run these tools using python3 (install python3 and pip3 first)
+If you get a missing module error, install the package
+	pip3 install psycopg2
+	pip3 install python-dateutil
+
+
+Example Tool Use:
+
+#ip address 168.* is the ip address of your server running postgresql
+#DATABASE_NAME is the name of the database you initially created (db1 if you use "psql -h 169.231.234.213 -U ubuntu db1")
+#DBUSER is the name of the database user (ubuntu if you use "psql -h 169.231.234.213 -U ubuntu db1")
+#DBPASSWORD is the password for the database user ubuntu (if you use "psql -h 169.231.234.213 -U ubuntu db1")
+$ python3 dbiface.py 169.231.xxx.xxx DATABASE_NAME DBUSER DBPASSWORD 
+('PostgreSQL 10.10 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36), 64-bit',)
+False
+(datetime.datetime(2019, 11, 5, 12, 47, 57, 96668), 18.0, 96.0)
+(datetime.datetime(2019, 11, 5, 12, 47, 57, 101172), 71.0, 21.0)
+python3 dbiface.py 169.231.xxx.xxx DATABASE_NAME DBUSER DBPASSWORD 
+
+$ python3 dbiface.py 169.231.xxx.xxx DATABASE_NAME DBUSER DBPASSWORD
+('PostgreSQL 10.10 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-36), 64-bit',)
+True
+(datetime.datetime(2019, 11, 5, 12, 51, 55, 525105), 0.0, 72.0)
+(datetime.datetime(2019, 11, 5, 12, 51, 55, 529682), 72.0, 96.0)
+
+
+download_table.py: #dump table to stdout
+python3 download_table.py 169.231.XXX.XXX cspot sf PWD pizero_06 --start "2018-05-09 00:00:00"
+python3 download_table.py 169.231.XXX.XXX cspot sf PWD pizero_06
+python3 tsdiff_table.py 169.231.XXX.XXX cspot sf PWD pizero_05 --start "2018-05-11 00:00:00" --end "2018-06-03 10:00:00"
+
+tsdiff_table.py: #print out time diffs between eles that are > 310s
+python3 tsdiff_table.py 169.231.XXX.XXX cspot sf PWD pizero_06 --start "2018-05-11 00:00:00" --end "2018-06-03 10:00:00"
