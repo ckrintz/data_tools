@@ -2,6 +2,12 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
 import threading, cgi
 
+#run via
+#python3 server.py
+
+#install dependencies
+#pip3 install pyopenssl httpserver
+
 #test using curl and HTTP via: (USE_HTTPS=False)
 #GET: curl http://localhost:8000
 
